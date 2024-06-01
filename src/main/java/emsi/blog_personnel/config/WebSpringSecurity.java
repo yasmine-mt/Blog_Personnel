@@ -35,10 +35,10 @@ public class WebSpringSecurity {
 			.authorizeRequests()
 			.requestMatchers("/resources/**").permitAll()
 			.requestMatchers("/register/**").permitAll()
-			.requestMatchers("/templates/admin/**").hasAnyRole("ADMIN", "GUEST")
+			.requestMatchers("/admin/**").hasAnyRole("ADMIN")
 			.and()
 			.formLogin(form -> form.loginPage("/login")
-						.defaultSuccessUrl("/templates/admin/posts")
+						.defaultSuccessUrl("/admin/posts")
 						.loginProcessingUrl("/login")
 						.permitAll()
 					).logout(
